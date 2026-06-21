@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Admission Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#003366;
+    margin-bottom:25px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:12px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.gender{
+    margin-top:10px;
+}
+
+.gender input{
+    width:auto;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:#003366;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0055aa;
+}
+
+#successMessage{
+    display:none;
+    margin-top:20px;
+    text-align:center;
+    color:green;
+    font-size:22px;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎓 College Admission Form</h1>
+
+<form id="admissionForm">
+
+<label>Full Name</label>
+<input type="text" required>
+
+<label>Date of Birth</label>
+<input type="date" required>
+
+<label>Gender</label>
+<div class="gender">
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+</div>
+
+<label>Email Address</label>
+<input type="email" required>
+
+<label>Phone Number</label>
+<input type="tel" required>
+
+<label>Parent/Guardian Name</label>
+<input type="text" required>
+
+<label>Parent Mobile Number</label>
+<input type="tel" required>
+
+<label>Address</label>
+<textarea rows="4"></textarea>
+
+<label>Select Course</label>
+<select required>
+<option value="">Choose Course</option>
+<option>BCA</option>
+<option>MCA</option>
+<option>BBA</option>
+<option>MBA</option>
+<option>B.Com</option>
+<option>B.Tech</option>
+<option>M.Tech</option>
+</select>
+
+<label>10th Percentage</label>
+<input type="number" placeholder="Enter Percentage">
+
+<label>12th Percentage</label>
+<input type="number" placeholder="Enter Percentage">
+
+<label>Student Photo</label>
+<input type="file" accept="image/*">
+
+<label>Upload Documents</label>
+<input type="file">
+
+<br><br>
+
+<input type="checkbox" required>
+I hereby declare that all information provided is correct.
+
+<button type="submit">Submit Admission</button>
+
+</form>
+
+<div id="successMessage">
+✅ Admission Form Submitted Successfully!
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("admissionForm").addEventListener("submit", function(event){
+
+event.preventDefault();
+
+document.getElementById("successMessage").style.display = "block";
+
+this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
